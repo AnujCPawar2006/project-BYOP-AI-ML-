@@ -1,14 +1,8 @@
 from datetime import datetime
 
-# -------------------------------
-# DATA STORAGE (LISTS)
-# -------------------------------
 transactions = []
 investments = []
 
-# -------------------------------
-# WANTS vs NEEDS CLASSIFIER
-# -------------------------------
 def classify_want_need(category, description=""):
     
     needs_keywords = [
@@ -33,9 +27,7 @@ def classify_want_need(category, description=""):
     
     return "UNCATEGORIZED"
 
-# -------------------------------
-# ADD TRANSACTION
-# -------------------------------
+
 def add_transaction():
     try:
         amount = float(input("Enter amount: Rs "))
@@ -62,9 +54,7 @@ def add_transaction():
     except:
         print("Invalid input")
 
-# -------------------------------
-# ADD INVESTMENT
-# -------------------------------
+
 def add_investment():
     try:
         asset = input("Asset name: ")
@@ -87,9 +77,7 @@ def add_investment():
     except:
         print("Invalid input")
 
-# -------------------------------
-# FINANCIAL SUMMARY
-# -------------------------------
+
 def show_summary():
     income = 0
     expense = 0
@@ -115,9 +103,7 @@ def show_summary():
     print("Investment P/L    : Rs", profit)
     print("Net Worth         : Rs", net_worth)
 
-# -------------------------------
-# WANTS vs NEEDS ANALYSIS
-# -------------------------------
+
 def show_wants_vs_needs():
     needs = 0
     wants = 0
@@ -137,9 +123,7 @@ def show_wants_vs_needs():
         print("Needs % :", round((needs/total)*100, 2))
         print("Wants % :", round((wants/total)*100, 2))
 
-# -------------------------------
-# SIMPLE TEXT VISUALIZATION
-# -------------------------------
+
 def show_bar_chart():
     needs = 0
     wants = 0
@@ -154,9 +138,7 @@ def show_bar_chart():
     print("Needs :", "*" * int(needs / 10))
     print("Wants :", "*" * int(wants / 10))
 
-# -------------------------------
-# SIMPLE PREDICTION (NO ML LIB)
-# -------------------------------
+
 def predict_expense():
     expenses = [t["Amount"] for t in transactions if t["Type"] == "Expense"]
     
@@ -190,9 +172,7 @@ def predict_investment():
     
     print("Predicted portfolio value (next period): Rs", round(predicted, 2))
 
-# -------------------------------
-# MAIN MENU
-# -------------------------------
+
 while True:
     print("\n------ PERSONAL FINANCE TRACKER ------")
     print("1. Add Income/Expense")
